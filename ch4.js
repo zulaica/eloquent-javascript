@@ -15,11 +15,7 @@ const range = (start, end, step = 1) => {
   return arr;
 };
 
-const sum = arr => {
-  return arr.reduce((total, n) => {
-    return (total += n);
-  }, 0);
-};
+const sum = arr => arr.reduce((total, n) => (total += n));
 
 console.log(range(1, 10));
 // → [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
