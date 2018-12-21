@@ -13,11 +13,7 @@ console.log(min(0, -10));
  */
 const isEven = n => {
   n = Math.abs(n);
-  if (n > 1) {
-    return isEven(n - 2);
-  } else {
-    return n === 0;
-  }
+  return n > 1 ? isEven(n - 2) : n === 0;
 };
 
 console.log(isEven(50));
