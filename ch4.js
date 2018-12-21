@@ -60,5 +60,15 @@ const arrayToList = arr => {
   return list;
 };
 
+const listToArray = list => {
+  let arr = [];
+  for (let obj = list; obj; obj = obj.rest) {
+    arr.push(obj.value);
+  }
+  return arr;
+};
+
 console.log(arrayToList([10, 20]));
 // → {value: 10, rest: {value: 20, rest: null}}
+console.log(listToArray(arrayToList([10, 20, 30])));
+// → [10, 20, 30]
