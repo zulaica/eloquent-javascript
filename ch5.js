@@ -20,3 +20,26 @@ loop(3, n => n > 0, n => n - 1, console.log);
 // → 3
 // → 2
 // → 1
+
+/*
+ * Everything
+ */
+// Loop version
+const every = (array, test) => {
+  for (let item of array) {
+    if (!test(item)) return false;
+  }
+  return true;
+};
+
+// Arran.some() version
+// const every = (array, test) => {
+//   return !array.some(item => !test(item))
+// }
+
+console.log(every([1, 3, 5], n => n < 10));
+// → true
+console.log(every([2, 4, 16], n => n < 10));
+// → false
+console.log(every([], n => n < 10));
+// → true
