@@ -54,3 +54,17 @@ let arrayValue = [1, 2, 3, 4, 5];
 reverseArrayInPlace(arrayValue);
 console.log(arrayValue);
 // → [5, 4, 3, 2, 1]
+
+/*
+ * A List
+ */
+const arrayToList = arr => {
+  let list = null;
+  for (let i = 0; i < arr.length; i++) {
+    list = { value: arr[i], rest: list };
+  }
+  return list;
+};
+
+console.log(arrayToList([10, 20]));
+// → {value: 10, rest: {value: 20, rest: null}}
