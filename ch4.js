@@ -71,11 +71,11 @@ const listToArray = list => {
 const prepend = (value, list) => ({ value, rest: list });
 
 const nth = (list, index) => {
-  if (index === 0) {
-    return !list ? undefined : list.value;
-  } else {
-    return nth(list.rest, index - 1);
-  }
+  return index === 0
+    ? !list
+      ? undefined
+      : list.value
+    : nth(list.rest, index - 1);
 };
 
 console.log(arrayToList([10, 20]));
