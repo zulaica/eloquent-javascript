@@ -70,13 +70,8 @@ const listToArray = list => {
 
 const prepend = (value, list) => ({ value, rest: list });
 
-const nth = (list, index) => {
-  return index === 0
-    ? !list
-      ? undefined
-      : list.value
-    : nth(list.rest, index - 1);
-};
+const nth = (list, index) =>
+  index === 0 ? (!list ? undefined : list.value) : nth(list.rest, index - 1);
 
 console.log(arrayToList([10, 20]));
 // → {value: 10, rest: {value: 20, rest: null}}
