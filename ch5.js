@@ -32,7 +32,7 @@ const every = (array, test) => {
   return true;
 };
 
-// Arran.some() version
+// Array.some() version
 // const every = (array, test) => {
 //   return !array.some(item => !test(item))
 // }
